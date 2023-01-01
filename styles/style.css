@@ -1,0 +1,63 @@
+/* -------------SLIDER---------------- */
+
+:root{
+  --bg-color-1:hsl(278, 35%, 78%);
+  --bg-color-2: hsl(337, 100%, 89%);
+  --bg-color-3: hsl(208, 97%, 87%);
+  --bg-color-4: hsl(209, 100%, 82%);
+
+  --img-size: 400px;
+  --img-perspective: perspective(calc(2.5*var(--img-size)));
+
+  --duration-anim: 9s;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: var(--bg-color-1);
+  animation: bg-color-anim var(--duration-anim) infinite;
+}
+
+.gallery {
+  
+  display: grid;
+  transform-style: preserve-3d;
+  animation: rotation-anim var(--duration-anim) infinite cubic-bezier(.5,-0.5,.5,1.5);
+}
+
+.gallery a {
+  grid-area: 1/1;
+  width: var(--img-size);
+  aspect-ratio: 1;
+  transform: var(--img-translation, ) translateZ(calc(var(--img-size)/2));
+}
+
+.gallery a:nth-child(1) {cursor: auto;}
+.gallery a:nth-child(2) {--img-translation: rotateY(-90deg)}
+.gallery a:nth-child(3) {--img-translation: rotateY( -180deg)}
+.gallery a:nth-child(4) {--img-translation: rotateY(-270deg)}
+
+.gallery:hover {
+    cursor: pointer;
+    animation-play-state: paused;
+}
+
+@keyframes bg-color-anim {
+  0%,20%   {background: var(--bg-color-1)}
+  20%,40% {background: var(--bg-color-2)}
+  40%,60% {background: var(--bg-color-3)}
+  60%,80% {background: var(--bg-color-4)}
+  80%, 100% {background-color: var(--bg-color-1);}
+}
+
+
+@keyframes rotation-anim {
+    0%,20%   {transform: var(--img-perspective)}
+    20%,40% {transform: var(--img-perspective) rotateY(90deg)}
+    40%,60% {transform: var(--img-perspective) rotateY(180deg)}
+    60%,80% {transform: var(--img-perspective) rotateY(270deg)}
+    80%,100% {transform: var(--img-perspective) rotateY(360deg)}
+}
