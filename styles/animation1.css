@@ -1,10 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-:root {
+/* --------------BALL--------------- */
+
+:root{ 
   --ball-color-1: hsl(119, 100%, 50%); 
   --ball-color-2:hsl(0, 100%, 50%);
   --ball-color-3:hsl(180, 100%, 50%);
@@ -15,21 +12,6 @@
 
   --duration-anim-color: 10s;
   --duration-anim-movement: 20s;
-}
-
-body{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 15fr;
-    height: 100vh;
-}
-
-.container {
-  grid-row: 2;
-  grid-column: 1 /span 2;
-
-  padding: 20px;
-  /* background-color: red; */
 }
 
 .ball {
@@ -76,9 +58,3 @@ body{
     75% {top: 42%}
     100% {top: 10%}
 }
-
-/* @keyframes x-axis {
-    to {
-        right:400px;
-    }
-} */

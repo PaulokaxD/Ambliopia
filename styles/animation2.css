@@ -1,0 +1,178 @@
+
+/* --------------BALL--------------- */
+
+:root{ 
+    --sun-radius:100px;
+    --sun-color-1: hsl(54, 84%, 49%);
+    --sun-color-2: hsl(39, 90%, 47%); 
+
+    --mercury-radius: 10px;
+    --mercury-color-1:hsl(37, 50%, 53%);
+    --mercury-color-2:hsl(47, 63%, 15%);
+
+    --venus-radius: 20px;
+    --venus-color-1:hsl(47, 85%, 41%);
+    --venus-color-2:hsl(34, 86%, 29%);
+
+    --earth-radius: 25px;
+    --earth-color-1:hsl(60, 100%, 50%);
+    --earth-color-2:hsl(60, 100%, 50%);
+
+    --mars-radius: 23px;
+    --mars-color-1:hsl(0, 69%, 61%);
+    --mars-color-2:hsl(0, 51%, 19%);
+
+    --jupiter-radius: 50px;
+    --jupiter-color-1:hsl(240, 100%, 50%);
+    --jupiter-color-2:hsl(240, 100%, 50%);
+
+    --saturn-radius: 40px;
+    --saturn-color-1:hsl(240, 100%, 50%);
+    --saturn-color-2:hsl(240, 100%, 50%);
+
+    --uranus-radius: 30px;
+    --uranus-color-1:hsl(203, 45%, 61%);
+    --uranus-color-2:hsl(204, 53%, 27%);
+
+    --neptune-radius: 32px;
+    --neptune-color-1:hsl(240, 100%, 50%);
+    --neptune-color-2:hsl(240, 100%, 50%);
+  }
+
+.container {
+    background-color: hsl(0, 2%, 10%);
+}
+
+.sun{
+    position: absolute;
+    height: var(--sun-radius);
+    width: var(--sun-radius);
+    border-radius: 100%;
+    background: radial-gradient(at 30% 50%, var(--sun-color-1), var(--sun-color-2));
+    box-shadow: 0 0 30px var(--sun-color-2);
+    left: calc(50% - var(--sun-radius) / 2);
+    animation: bounce 2s infinite ease-in,
+                spin 5s infinite linear;
+}
+
+.mercury {
+    position: absolute;
+    height: var(--mercury-radius);
+    width: var(--mercury-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--mercury-color-1), var(--mercury-color-2));
+    top: calc(50% - var(--mercury-radius) / 2);
+    left: calc(50% - var(--mercury-radius) / 2);
+    transform: translateX(calc(var(--sun-radius) + var(--mercury-radius) + 5px));
+    animation: rotate-mercury 3s linear infinite;
+}
+
+.venus {
+    position: absolute;
+    height: var(--venus-radius);
+    width: var(--venus-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--venus-color-1), var(--venus-color-2));
+    animation: rotate-venus 10s linear infinite;
+}
+
+.earth {
+    position: absolute;
+    height: var(--earth-radius);
+    width: var(--earth-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--earth-color-1), var(--earth-color-2));
+    animation: rotate-earth 10s linear infinite;
+}
+
+.mars {
+    position: absolute;
+    height: var(--mars-radius);
+    width: var(--mars-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--mars-color-1), var(--mars-color-2));
+    animation: rotate-mars 10s linear infinite;
+}
+
+.jupiter {
+    position: absolute;
+    height: var(--jupiter-radius);
+    width: var(--jupiter-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--jupiter-color-1), var(--jupiter-color-2));
+    animation: rotate-jupiter 10s linear infinite;
+}
+
+.saturn {
+    position: absolute;
+    height: var(--saturn-radius);
+    width: var(--saturn-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--saturn-color-1), var(--saturn-color-2));
+    animation: rotate-saturn 10s linear infinite;
+}
+
+.uranus {
+    position: absolute;
+    height: var(--uranus-radius);
+    width: var(--uranus-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--uranus-color-1), var(--uranus-color-2));
+    animation: rotate-uranus 10s linear infinite;
+}
+
+.neptune {
+    position: absolute;
+    height: var(--neptune-radius);
+    width: var(--neptune-radius);
+    border-radius: 100%;
+    background:  radial-gradient(at 30% 50%, var(--neptune-color-1), var(--neptune-color-2));
+    animation: rotate-neptune 10s linear infinite;
+}
+
+@keyframes bounce {
+    0%,33%  {top:  calc(50% - var(--sun-radius) / 2);}
+    33%,66% {top:  calc(51% - var(--sun-radius) / 2);}
+    66%, 100% {top:  calc(50% - var(--sun-radius) / 2);}
+}
+
+@keyframes rotate-mercury {
+    from { 	transform: rotate(0deg) translateX(70px); }
+	to   {  transform: rotate(360deg) translateX(70px); }
+}
+  
+@keyframes rotate-venus {
+    from { 	transform: rotate(0deg) translateX(90px); }
+	to   {  transform: rotate(360deg) translateX(90px); }
+}
+  
+@keyframes rotate-earth {
+    from { 	transform: rotate(0deg) translateX(70px); }
+	to   {  transform: rotate(360deg) translateX(70px); }
+}
+  
+@keyframes rotate-mars {
+    from { 	transform: rotate(0deg) translateX(70px); }
+	to   {  transform: rotate(360deg) translateX(70px); }
+}
+  
+@keyframes rotate-jupiter {
+    from { 	transform: rotate(0deg) translateX(70px); }
+	to   {  transform: rotate(360deg) translateX(70px); }
+}
+  
+@keyframes rotate-saturn {
+    from { 	transform: rotate(0deg) translateX(70px); }
+	to   {  transform: rotate(360deg) translateX(70px); }
+}
+  
+@keyframes rotate-uranus {
+    from { 	transform: rotate(0deg) translateX(70px); }
+	to   {  transform: rotate(360deg) translateX(70px); }
+}
+  
+@keyframes rotate-neptune {
+    from { 	transform: rotate(0deg) translateX(70px); }
+	to   {  transform: rotate(360deg) translateX(70px); }
+}
+  
