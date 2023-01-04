@@ -1,0 +1,106 @@
+:root{
+    --ball-color-1: hsl(197, 82%, 53%);
+    --ball-color-2: hsl(197, 82%, 20%);
+    --ball-color-3: hsl(119, 82%, 46%);
+    --ball-color-4: hsl(119, 82%, 26%);
+    --ball-color-5: hsl(20, 82%, 46%);
+    --ball-color-6: hsl(20, 82%, 26%);
+    --ball-color-7: hsl(284, 75%, 61%);
+    --ball-color-8: hsl(284, 75%, 21%);
+    --sky-color-1: hsl(197, 72%, 86%);
+    --sky-color-2: hsl(197, 72%, 66%);
+    --ground-color-1: hsl(23, 95%, 40%);
+    --ground-color-2: hsl(28, 92%, 20%);
+    --ball-diameter: 70px;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 12fr 2fr;
+    padding: 0px;
+}
+
+.ball {
+    position: absolute;
+    width: var(--ball-diameter);
+    height: var(--ball-diameter);
+    border-radius: 100%;
+    
+    top: calc(20% - var(--ball-diameter) / 2);
+    left: calc(50% - var(--ball-diameter) / 2);
+}
+
+#normal {
+    animation: position 5s linear infinite,
+                ball-color 20s linear infinite;
+}
+
+#reverse {
+    animation: position 4s linear infinite reverse,
+                ball-color 16s linear infinite reverse; 
+    
+}
+
+.star{
+    position: absolute;
+    
+    top: calc(55% - var(--ball-diameter) / 2);
+    left: calc(50% - var(--ball-diameter) / 2);
+
+    font-size: xxx-large;
+    animation: flips 2s linear infinite;
+}
+
+@keyframes position {
+    0% {
+        transform: translate(0px, 0px);
+      }
+      10% {
+        transform: translate(76px, 236px);
+      }
+      20% {
+        transform: translate(230px,236px);
+      }
+      30% {
+        transform: translate(123px,382px);
+      }
+      40% {
+        transform: translate(200px,617px);
+      }
+      50% {
+        transform: translate(0px, 471px);
+      }
+      60% {
+        transform: translate(-200px, 617px);
+      }
+      70% {
+        transform: translate(-123px, 382px);
+      }
+      80% {
+        transform: translate(-230px, 236px);
+      }
+      90% {
+        transform: translate(-76px, 236px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+}
+
+
+@keyframes ball-color {
+    0%{background: radial-gradient(at 50% 30%, var(--ball-color-1), var(--ball-color-2));}
+    25%{background: radial-gradient(at 50% 30%, var(--ball-color-3), var(--ball-color-4));}
+    50%{background: radial-gradient(at 50% 30%, var(--ball-color-5), var(--ball-color-6));}
+    75%{background: radial-gradient(at 50% 30%, var(--ball-color-7), var(--ball-color-8));}
+    100%{background: radial-gradient(at 50% 30%, var(--ball-color-1), var(--ball-color-2));}
+}
+
+@keyframes flips {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
