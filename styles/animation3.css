@@ -55,38 +55,17 @@
 
 @keyframes position {
     0% {
-        transform: translate(0px, 0px);
-      }
-      10% {
-        transform: translate(76px, 236px);
-      }
-      20% {
-        transform: translate(230px,236px);
-      }
-      30% {
-        transform: translate(123px,382px);
-      }
-      40% {
-        transform: translate(200px,617px);
-      }
-      50% {
-        transform: translate(0px, 471px);
-      }
-      60% {
-        transform: translate(-200px, 617px);
-      }
-      70% {
-        transform: translate(-123px, 382px);
-      }
-      80% {
-        transform: translate(-230px, 236px);
-      }
-      90% {
-        transform: translate(-76px, 236px);
-      }
-      100% {
-        transform: translate(0px, 0px);
-      }
+        transform: translate(0px, 0px);}
+      10% {transform: translate(76px, 236px);}
+      20% {transform: translate(230px,236px);}
+      30% {transform: translate(123px,382px);}
+      40% {transform: translate(200px,617px);}
+      50% {transform: translate(0px, 471px);}
+      60% {transform: translate(-200px, 617px);}
+      70% {transform: translate(-123px, 382px);}
+      80% {transform: translate(-230px, 236px);}
+      90% {transform: translate(-76px, 236px);}
+      100% {transform: translate(0px, 0px);}
 }
 
 
